@@ -2,6 +2,7 @@ package com.controle.estoque.aplication.domain.entity;
 
 public class Produto {
 
+    private String SKU;
     private String nome;
     private Integer quantidade;
     private Double taxaManutencao;
@@ -10,8 +11,11 @@ public class Produto {
     private Double taxaEquipamento;
     private ValorVenda valorVenda;
 
-    public Produto(String nome, Integer quantidade, Double taxaManutencao, Double taxaInstalacao, Double taxaSuporte, Double taxaEquipamento) throws Exception {
+    public Produto(String SKU, String nome, Integer quantidade, Double taxaManutencao, Double taxaInstalacao, Double taxaSuporte, Double taxaEquipamento) throws Exception {
         try {
+            if(SKU ==null || SKU == "") {
+                throw new Exception("SKU inválido");
+            }
             if(nome==null || nome == "") {
                 throw new Exception("Nome inválido");
             }
@@ -31,7 +35,7 @@ public class Produto {
                 throw new Exception("Taxa Equipamento inválido");
             }
         } catch(Exception e) {
-            return;
+            throw new Exception(e);
         }
 
         ValorVenda valorVenda = new ValorVenda();
@@ -45,6 +49,7 @@ public class Produto {
 
         valorVenda.setValorFinal(valorVenda.getMultiplo()*100);
 
+        this.SKU = SKU;
         this.nome = nome;
         this.quantidade = quantidade;
         this.taxaManutencao = taxaManutencao;
@@ -108,6 +113,14 @@ public class Produto {
 
     public void setValorVenda(ValorVenda valorVenda) {
         this.valorVenda = valorVenda;
+    }
+
+    public String getSKU() {
+        return SKU;
+    }
+
+    public void setSKU(String SKU) {
+        this.SKU = SKU;
     }
 }
 

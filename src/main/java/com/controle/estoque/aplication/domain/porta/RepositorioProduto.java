@@ -1,12 +1,10 @@
 package com.controle.estoque.aplication.domain.porta;
 
-import com.controle.estoque.aplication.domain.dados.ProdutoDTO;
-
-import java.util.List;
+import com.controle.estoque.aplication.domain.dto.ProdutoDTO;
 
 public interface RepositorioProduto {
 
 
-    public ProdutoDTO buscarDados(String nome);
+    ProdutoDTO buscarDados(String nome);
 }
 

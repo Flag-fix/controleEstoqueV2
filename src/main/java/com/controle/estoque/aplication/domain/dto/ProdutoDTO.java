@@ -1,9 +1,7 @@
-package com.controle.estoque.aplication.domain.dados;
+package com.controle.estoque.aplication.domain.dto;
 
-import com.controle.estoque.aplication.domain.entity.ValorVenda;
-
-public class ProdutoDTO
-{
+public class ProdutoDTO {
+    private String SKU;
     private String nome;
     private Integer quantidade;
     private Double taxaManutencao;
@@ -60,5 +58,11 @@ public class ProdutoDTO
         this.taxaEquipamento = taxaEquipamento;
     }
 
+    public String getSKU() {
+        return SKU;
+    }
 
+    public void setSKU(String SKU) {
+        this.SKU = SKU;
+    }
 }

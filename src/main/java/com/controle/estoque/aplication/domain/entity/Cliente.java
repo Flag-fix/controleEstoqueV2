@@ -1,6 +1,6 @@
 package com.controle.estoque.aplication.domain.entity;
 
-import static com.controle.estoque.aplication.domain.usecase.ValidaCpfCliente.validarCpf;
+import static com.controle.estoque.aplication.domain.entity.Validacoes.validarCpf;
 
 public class Cliente {
 
@@ -80,6 +80,10 @@ public class Cliente {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public Boolean validarCpf(String cpf){
+        return Validacoes.validarCpf(cpf);
     }
 }
 

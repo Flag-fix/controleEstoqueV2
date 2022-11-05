@@ -1,8 +1,8 @@
-package com.controle.estoque.aplication.domain.usecase;
+package com.controle.estoque.aplication.domain.entity;
 
 import java.util.InputMismatchException;
 
-public class ValidaCpfCliente {
+public class Validacoes {
 
     public static boolean validarCpf(String CPF) {
         if (CPF.equals("00000000000") ||
